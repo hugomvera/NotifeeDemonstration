@@ -31,6 +31,10 @@ export default function Screen() {
     });
   }
 
+  async function deleteNotification() {
+    await notifee.cancelNotification('123');
+  }
+
   //will place the notifcation funciton here
   async function updateNotification() {
     // Request permissions (required for iOS)
@@ -69,6 +73,10 @@ export default function Screen() {
         <Button
           title="Update Notifcation"
           onPress={() => updateNotification()}
+        />
+        <Button
+          title="Delete Notification"
+          onPress={() => deleteNotification()}
         />
       </SafeAreaView>
     </View>
